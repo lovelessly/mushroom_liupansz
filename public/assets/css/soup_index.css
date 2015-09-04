@@ -1,0 +1,21 @@
+#tracking{
+	text-align: center;
+}
+#tracking input{
+	width: 80%;
+	margin:40px auto;
+	
+}
+#sample{
+	margin:20px auto;
+	width:80%;
+	height:50%;
+	background-image:url(images/barcode.png);
+}
+#track{
+	display:block;
+	margin:0 auto;
+	width:200px;
+	background-color:#2ECC71;
+	color:white;
+}

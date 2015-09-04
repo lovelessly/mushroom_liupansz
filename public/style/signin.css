@@ -1,0 +1,65 @@
+
+/**************Wrapper样式***************/
+#wrapper{
+	width: 1000px;
+	position:relative;
+    margin-top:150px;
+	margin-right:auto;
+	margin-left:auto;
+	}
+#ads{
+	width:499px;
+	height:400px;
+	margin:0px;
+	padding:0px;
+	float:left;
+	background:url(../images/5846467_151901046395_2.jpg) center no-repeat;
+	background-size:100%;
+	}
+#signInBox{
+	width:498px;
+	height:400px;
+	margin:0px;
+	padding:0px;
+	float:right;
+	}
+#signIn{
+	padding:20px 10px;
+	}
+#signIn input{
+	background: #FBFFDF;
+    font-size: 15px;
+    border: 1px solid #FBFFDF;
+    border-radius: 5px;
+    padding: 8px 10px;
+    box-shadow: inset 0 1px 2px rgba(15,82,135,.25),0 1px 0 rgba(255,255,255,.15);
+    width: 400px;
+    margin: 20px 20px;
+    color: #555;
+    line-height: 17px;
+	}
+input#checkbox{
+	width: 10px;
+}
+#buttonWrapper{
+	margin:40px 26px;
+	}
+#buttonWrapper input{
+	width:200px;
+	height:40px;
+	margin:auto;
+	background: -webkit-gradient(linear,0 0,0 bottom,from(#07705D),to(#02322B))	;
+	background-image:-moz-linear-gradient(top, #07705D, #02322B);
+	background-image: -ms-linear-gradient(top,#07705D,#02322B);;
+	color:#FFFFFF;
+	cursor:pointer
+	}
+#forgotPsw{
+	float:right;
+	margin:20px 30px;
+	text-decoration:none;
+	color:#8A8A8A;
+	}
+#forgotPsw:hover{
+	color:#464445;
+	}

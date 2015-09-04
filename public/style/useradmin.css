@@ -1,0 +1,39 @@
+
+#main{
+	float: right;
+    width: 660px;
+    height:100%;
+    text-align: center;
+}
+#main p{
+	padding:10px;
+	margin:10px;
+	font-size: 0.8em;
+}
+#profile{
+	width:200px;
+	height: 200px;
+	-webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px; 
+    border: #C4C4C4 1px solid;
+    margin: auto;
+}
+#profile a{
+	font-weight: 800;
+}
+#log{
+	border-top: #C4C4C4 1px solid;
+	padding: 15px 20px;
+}
+#lastLog p{
+  margin:0px;
+  float:right;
+  padding:0px;
+}
+#welcome h1{
+  text-align:center;
+  padding:40px;
+}
+
+

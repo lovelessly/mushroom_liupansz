@@ -1,0 +1,204 @@
+
+/**********************slideshow样式*************************/
+#slideContainer{
+	position:relative;
+	}
+#window{
+	height:400px;
+	width:1000px;
+	margin:auto;
+	margin-top:70px;
+	overflow:hidden;
+	position:relative;
+}
+#imgreel{
+	position:absolute;
+	top:0;
+	left:0;
+	}
+#imgreel img{
+	float:left;
+	}
+#picCaption{
+	filter: alpha(opacity=50);
+    background: rgba(80, 80, 80, 0.5) !important; /* IE无效，FF有效 */
+	position:absolute;
+    left:0px;
+	bottom:0px;
+    text-align: center;  
+    line-height: 40px;
+	width:1000px;
+	height:50px;
+	z-index:100;  
+	};
+#picCaption p{
+	width:70%;
+	float:left;
+	} 
+#paging{
+    width: 20%;
+	float:right;
+	}
+#paging a{
+    padding: 5px;  
+    text-decoration: none;  
+    color: #fff; 
+} 
+#paging a.active {  
+    font-weight: bold;  
+    background: #920000;  
+    border: 1px solid #610000;  
+    -moz-border-radius: 3px;  
+    -khtml-border-radius: 3px;  
+    -webkit-border-radius: 3px;  
+}  
+#paging a:hover {
+	font-weight: bold;  
+}
+#picCaption p{
+	float:left;
+	text-align:left;
+	padding:5px;
+	margin:5px;
+	color:#FFFFFF;
+}
+/*******************Main Ctontent***************/
+#wrapper{
+	width: 1000px;
+	position:relative;
+    margin-top:40px;
+	margin-right:auto;
+	margin-left:auto;
+	}
+.title{
+	color:#FFFFFF;
+    font-size:16px;
+	font-weight:900;
+	height:35px;
+	background:url(../images/titleBg.png) repeat-x;
+	background-size:contain;
+	padding-left:10px;
+	line-height:200%;
+	}
+#features{
+	position:relative;
+	margin-left:10px;
+	}
+#side{
+	float:left;
+	width:330px;
+	margin-right:20px
+	}
+#searchContainer{
+	border:1px solid #B2B2B2;
+	margin-bottom:20px;
+	margin-top:10px;
+	padding:10px;
+	border-radius: 10px;
+	}
+#searchContainer input[type=text]{
+  display: block;
+  width:85%;
+  font-size: 14px;
+  box-shadow:#A3A0A0;
+  border-radius: none;
+  float:left;
+	}
+#searchContainer input[type=button]{
+	width:25px;
+	height:25px;
+	float:right;
+	margin:0px;
+	padding:0px;
+	text-decoration:none;
+	background:url(../images/searchButton.png) no-repeat;
+	background-size: contain;
+	}
+#demoPic{
+	height:250px;
+	background-color:#0F6368;
+	margin-bottom:20px;
+	padding:20px;
+	background:url(../images/trackingSample.png) no-repeat center;
+	border:1px solid #C2C2C2;
+	border-radius:10px;
+	}
+#news{
+	height:400px;
+	padding:20px;
+	}
+#news p{
+	text-align:left;
+	line-height:40px;
+	width:100%;
+	border-bottom:1px solid #C4C4C4;
+	}
+#news a{
+	text-decoration:none;
+	color:#000000;
+	}
+#news a:hover{
+	text-decoration:underline;
+	}
+#main{
+	float:right;
+	width:650px;
+	padding:0px;
+	}
+#products a{
+	display:block;
+	float:left;
+	width:180px;
+	height:280px;
+	margin:10px;
+	position:relative;
+	border-radius:10px;
+	}
+#products div{
+	width:100%;
+	height:40px;
+	filter: alpha(opacity=50);
+    background: rgba(80, 80, 80, 0.5) !important; /* IE无效，FF有效 */
+	position:absolute;
+	bottom:0px;
+	left:0px
+	}
+#products p.productPrice{
+	float:right;
+	}
+#products p.productName{
+	float:left;
+	}
+#products p{
+	color:#ffffff;
+	font-weight:500;
+	padding:10px;
+	}
+#products li:first-child a{
+	background:url(../images/8.jpg) center no-repeat;
+	}
+#products li:nth-child(2) a{
+	background:url(../images/9.jpg) center no-repeat;
+	}
+#products li:nth-child(3) a{
+	background:url(../images/sample1.jpg) center no-repeat;
+	}
+#products li:nth-child(4) a{
+	background:url(../images/sample2.jpg) center no-repeat;
+	}
+#products li:nth-child(5) a{
+	background:url(../images/sample3.jpg) center no-repeat;
+	}
+#products li:nth-child(6) a{
+	background:url(../images/sample4.jpg) center no-repeat;
+	}
+#products li:nth-child(7) a{
+	background:url(../images/sample5.jpg) center no-repeat;
+	}
+#products li:nth-child(8) a{
+	background:url(../images/sample6.jpg) center no-repeat;
+	}
+#products li:nth-child(9) a{
+	background:url(../images/sample7.jpg) center no-repeat;
+	}
+
