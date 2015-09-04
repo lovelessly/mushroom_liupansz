@@ -2,8 +2,8 @@
 
 return [
 
-	'domain' => 'http://mushroom.pi.com',
-	//'domain' => 'http://liupansz.com',
+	//'domain' => 'http://mushroom.pi.com',
+	'domain' => 'http://liupansz.com',
 
 	/*
 	|--------------------------------------------------------------------------
