@@ -50,6 +50,16 @@ class IndexController extends Controller {
 		return $view;
 	}
 
+	//关于我们页面
+	public function getAbout()
+	{
+		$view = view('index.about');
+		//echo json_encode(Session::get('isLogin'));die;
+		$view->with('username', Session::get('User_Name'));
+		$view->with('base_time',strftime("%Y-%m-%d %H:%M:%S", time()-3600*24*$this->newproduct_period));
+		return $view;
+	}
+
 	//追溯信息页面
 	public function getTrack()
 	{
@@ -223,8 +233,8 @@ class IndexController extends Controller {
 			$preorder_array['step'] = 1;
 		}
 		
-		//写入缓存，考虑误操作，10min之后过期
-		Cache::put($CacheKey, $preorder_array, 30);
+		//写入缓存，考虑误操作，60min之后过期
+		Cache::put($CacheKey, $preorder_array, 60);
 		//echo json_encode($preorder_array);die;
 
 		$view = view('index.checkout');

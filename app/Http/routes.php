@@ -22,6 +22,7 @@ Route::get('/checkout', 'IndexController@getCheckout');
 Route::get('/orderdispatch', 'IndexController@getOrderdispatch');
 Route::get('/orderconfirm', 'IndexController@getOrderconfirm');
 Route::get('/newsdetail', 'IndexController@getNewsdetail');
+Route::get('/about', 'IndexController@getAbout');
 
 //Route::get('/home/test', 'HomeController@test');
 //Route::controller('home', 'HomeController');

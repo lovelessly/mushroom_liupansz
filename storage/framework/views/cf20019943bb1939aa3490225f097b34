@@ -1,5 +1,4 @@
-@extends('index.base')
-@section('banner')
+<?php $__env->startSection('banner'); ?>
 
 <div class="banner" style='z-index:0'>
   <div class="full-container">
@@ -69,9 +68,9 @@
 </div>
 <!--/.banner style1-->
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 
   <div class="globalPadding">
     <h3 class="section-title style2 text-center"><span>产品溯源</span></h3>
@@ -105,37 +104,37 @@
     <div class="container">
       <div class="row xsResponse">
 
-		@foreach($cplist as $cp)	
+		<?php foreach($cplist as $cp): ?>	
         <!--/.item1-->
         <div class="item col-sm-3 col-lg-3 col-md-3 col-xs-6">
           <div class="product">
           
             <div class="image">  
           <div class="quickview">
-              <a title="Quick View" href="./productdetail?CPID={{$cp['CPID']}}" class="btn btn-xs  btn-quickview" > 快速查看 </a>
-             </div><a href="./productdetail?CPID={{$cp['CPID']}}"><img src="{{$cp['展示图片']}}" alt="img" class="img-responsive" id="starcp1_img" style="min-height:240px"></a>
+              <a title="Quick View" href="./productdetail?CPID=<?php echo e($cp['CPID']); ?>" class="btn btn-xs  btn-quickview" > 快速查看 </a>
+             </div><a href="./productdetail?CPID=<?php echo e($cp['CPID']); ?>"><img src="<?php echo e($cp['展示图片']); ?>" alt="img" class="img-responsive" id="starcp1_img" style="min-height:240px"></a>
               <div class="promotion"> 
-              @if($base_time < $cp['Create_Time']) 
+              <?php if($base_time < $cp['Create_Time']): ?> 
               <span class="new-product"> 新品</span>
-              @endif 
-              <span class="discount" id="starcp1_discnt">{{$cp['折扣']}}折</span> </div>
+              <?php endif; ?> 
+              <span class="discount" id="starcp1_discnt"><?php echo e($cp['折扣']); ?>折</span> </div>
             </div>
             <div class="description">
-              <h4><a href="./productdetail?CPID={{$cp['CPID']}}" id="starcp1_cpname">{{$cp['产品名称']}}</a></h4>
+              <h4><a href="./productdetail?CPID=<?php echo e($cp['CPID']); ?>" id="starcp1_cpname"><?php echo e($cp['产品名称']); ?></a></h4>
               <div class="grid-description">
-                <p id="starcp1_descrip">{{$cp['产品简介']}}</p>
+                <p id="starcp1_descrip"><?php echo e($cp['产品简介']); ?></p>
               </div>
               <div class="list-description">
                 <p> 产品详细描述 </p>
               </div>
               </div>
-            <div class="price"> <span id="starcp1_price">￥{{$cp['单价']}}</span> </div>
-            <div class="action-control" onclick="add_product_to_cart({{$cp['CPID']}})"> <a class="btn btn-primary"> <span class="add2cart" ><i class="glyphicon glyphicon-shopping-cart"> </i> 加入购物车 </span> </a> </div>
+            <div class="price"> <span id="starcp1_price">￥<?php echo e($cp['单价']); ?></span> </div>
+            <div class="action-control" onclick="add_product_to_cart(<?php echo e($cp['CPID']); ?>)"> <a class="btn btn-primary"> <span class="add2cart" ><i class="glyphicon glyphicon-shopping-cart"> </i> 加入购物车 </span> </a> </div>
           </div>
 		</div>
  
 		<!--/.item-->
-		@endforeach
+		<?php endforeach; ?>
 
       </div>
       <!-- /.row -->
@@ -147,4 +146,6 @@
   <!--/.section-block--> 
   
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('index.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

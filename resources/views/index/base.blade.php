@@ -147,9 +147,7 @@
                         <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
                             <div class="pull-left ">
                                 <ul class="userMenu ">
-                                    <li><span class="hidden-xs"> </span><i class="glyphicon glyphicon-info-sign hide visible-xs "></i>
-                                    </li>
-                                    <li class="phone-number"> <a href="callto:+8801680531352"> <span> <i class="glyphicon glyphicon-phone-alt "></i></span> <span class="hidden-xs" style="margin-left:5px">{{Config::get('mushroom.contact_phone_num')}}</span> </a> 
+                                    <li class="phone-number"> <a href="callto:+86{{Config::get('mushroom.contact_phone_num_2')}}"> <span> <i class="glyphicon glyphicon-phone-alt "></i></span> <span class="hidden-xs" style="margin-left:5px">{{Config::get('mushroom.contact_phone_num')}}</span> </a> 
                                     </li>
                                 </ul>
                             </div>
@@ -164,10 +162,10 @@
 									@if(Session::get('isLogin'))
 									<li> <a href="" > <span class="hidden-xs">{{Session::get('User_Name')}}</span></a>
 									</li>
-									<li> <a onclick='logout();'><span class="hidden-xs" >LOGOUT</span></a>
+									<li> <a onclick='logout();'><span class=""><i class="glyphicon glyphicon-log-out"></i>&nbsp;退出</span></a>
 									</li>
 									@else
-                                    <li> <a href="userlog.html" data-toggle="modal" data-target="#ModalLogin"> <span class="hidden-xs">登陆</span> <i class="glyphicon glyphicon-log-in hide visible-xs "></i> </a> 
+                                    <li> <a href="userlog.html" data-toggle="modal" data-target="#ModalLogin"> <span class="hidden-xs">登陆</span> <span class="hide visible-xs "><i class="glyphicon glyphicon-log-in"></i>&nbsp;登陆</span> </a> 
                                     </li>
                                     <li class="hidden-xs"> <a href="userlog.html" data-toggle="modal" data-target="#ModalSignup"> 注册 </a> 
 									</li>
@@ -184,18 +182,12 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"> 导航 </span>  <span class="icon-bar"> </span>  <span class="icon-bar"> </span>  <span class="icon-bar"> </span> 
 					</button>
 					@if(Session::get('isLogin'))
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"> <i class="fa fa-shopping-cart colorWhite"> </i>  <span class="cartRespons colorWhite"> 购物车 (￥210.00) </span>
-					@else
-					@endif 
-                    </button> <a class="navbar-brand " href=""> <img src="images/logo.png" alt="TSHOP"> </a> 
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart">  <a href="./cart" class="dropdown-toggle"><i class="fa fa-shopping-cart colorWhite"> </i>  <span class="cartRespons colorWhite"> 购物车 </span></a>
+                    </button>
+                    @else
+					@endif
+					<a class="navbar-brand " href=""> <img src="images/logo.png" alt="TSHOP"> </a> 
                     <!-- this part for mobile -->
-                    <div class="search-box pull-right hidden-lg hidden-md hidden-sm">
-                        <div class="input-group">
-                            <button class="btn btn-nobg getFullSearch" type="button"> <i class="fa fa-search"> </i> 
-                            </button>
-                        </div>
-                        <!-- /input-group -->
-                    </div>
                 </div>
                 <!-- this part is duplicate from cartMenu keep it for mobile -->
                 <!--/.navbar-cart-->
@@ -209,12 +201,15 @@
                         </li>
                         <li class="active"> <a href="news"> 市场新闻 </a> 
                         </li>
+                        <!--
                         <li class="active"> <a href="#"> 农户风采 </a> 
                         </li>
-                        <li class="active"> <a href="#"> 关于我们 </a> 
+                        -->
+                        <li class="active"> <a href="about"> 关于我们 </a> 
                         </li>
+                        
                         @if(Session::get('isAdmin'))
-                        <li class="active"> <a href="./admin"> 管理后台 </a> 
+                        <li class="active hidden-xs"> <a href="./admin"> 管理后台 </a> 
                         </li>
                         @elseif(Session::get('isLogin'))
                         <li class="active"> <a href="./ordermanage"> 我的订单 </a> 
@@ -225,10 +220,11 @@
 					<div class="nav navbar-nav navbar-right hidden-xs">
 						@if(Session::get('isLogin') and false == Session::get('isAdmin'))
                         <div class="dropdown  cartMenu "> <a href="./cart" class="dropdown-toggle"> <i class="fa fa-shopping-cart"> </i> <span class="cartRespons"> 购物车 </span>  </a>
-						@else
-						@endif
+						
                             <!--/.dropdown-menu-->
                         </div>
+                        @else
+						@endif
                         <!--/.cartMenu-->
                         <!--/.search-box -->
                     </div>

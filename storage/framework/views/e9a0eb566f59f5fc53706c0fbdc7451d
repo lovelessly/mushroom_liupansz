@@ -3,7 +3,7 @@
     
     <head>
         <meta charset="utf-8">
-        <base href="{{Config::get('app.domain')}}">
+        <base href="<?php echo e(Config::get('app.domain')); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Fav and touch icons -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
@@ -87,7 +87,7 @@
                         </div>
                         <div>
                             <div>
-                                <input name="submit" class="btn  btn-block btn-lg btn-primary" value="LOGIN" type="submit" onclick="indexlogin('{{Session::get('tk')}}')">
+                                <input name="submit" class="btn  btn-block btn-lg btn-primary" value="LOGIN" type="submit" onclick="indexlogin('<?php echo e(Session::get('tk')); ?>')">
                             </div>
                         </div>
                         <!--userForm-->
@@ -160,7 +160,7 @@
                         <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
                             <div class="pull-left ">
                                 <ul class="userMenu ">
-                                    <li class="phone-number"> <a href="callto:+86{{Config::get('mushroom.contact_phone_num_2')}}"> <span> <i class="glyphicon glyphicon-phone-alt "></i></span> <span class="hidden-xs" style="margin-left:5px"> {{Config::get('mushroom.contact_phone_num')}} </span> </a> 
+                                    <li class="phone-number"> <a href="callto:+86<?php echo e(Config::get('mushroom.contact_phone_num_2')); ?>"> <span> <i class="glyphicon glyphicon-phone-alt "></i></span> <span class="hidden-xs" style="margin-left:5px"> <?php echo e(Config::get('mushroom.contact_phone_num')); ?> </span> </a> 
                                     </li>
                                 </ul>
                             </div>
@@ -172,17 +172,17 @@
                                     <li> <a href="account.html"><span class="hidden-xs" id="showname"> 我的账户</span> <i class="glyphicon glyphicon-user hide visible-xs "></i></a> 
                                     </li>
 -->
-                                    @if(Session::get('isLogin'))
-                                    <li> <a href="" > <span class="hidden-xs">{{Session::get('User_Name')}}</span></a>
+                                    <?php if(Session::get('isLogin')): ?>
+                                    <li> <a href="" > <span class="hidden-xs"><?php echo e(Session::get('User_Name')); ?></span></a>
                                     </li>
                                     <li> <a onclick='logout();'><span class=""><i class="glyphicon glyphicon-log-out"></i>&nbsp;退出</span></a>
                                     </li>
-                                    @else
+                                    <?php else: ?>
                                     <li> <a href="userlog.html" data-toggle="modal" data-target="#ModalLogin"> <span class="hidden-xs">登陆</span> <span class="hide visible-xs "><i class="glyphicon glyphicon-log-in"></i>&nbsp;登陆</span> </a> 
                                     </li>
                                     <li class="hidden-xs"> <a href="userlog.html" data-toggle="modal" data-target="#ModalSignup"> 注册 </a> 
                                     </li>
-                                    @endif
+                                    <?php endif; ?>
                                 </ul>
                             </div>
                         </div>
@@ -194,11 +194,11 @@
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"> 导航 </span>  <span class="icon-bar"> </span>  <span class="icon-bar"> </span>  <span class="icon-bar"> </span> 
 					</button>
-					@if(Session::get('isLogin'))
+					<?php if(Session::get('isLogin')): ?>
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"><a href="./cart" class="dropdown-toggle"> <i class="fa fa-shopping-cart colorWhite"> </i>  <span class="cartRespons colorWhite"> 购物车 </span></a>
                     </button>
-                    @else
-                    @endif
+                    <?php else: ?>
+                    <?php endif; ?>
                      <a class="navbar-brand " href=""> <img src="images/logo.png" alt="TSHOP"> </a> 
                     <!-- this part for mobile -->
                     <div class="search-box pull-right hidden-lg hidden-md hidden-sm">
@@ -224,23 +224,23 @@
                         <li class="active"> <a href="about"> 关于我们 </a> 
                         </li>
 
-                        @if(Session::get('isAdmin'))
+                        <?php if(Session::get('isAdmin')): ?>
                         <li class="active hidden-xs"> <a href="./admin"> 管理后台 </a> 
                         </li>
-                        @elseif(Session::get('isLogin'))
+                        <?php elseif(Session::get('isLogin')): ?>
                         <li class="active"> <a href="./ordermanage"> 我的订单 </a> 
                         </li>
-                        @endif
+                        <?php endif; ?>
                     </ul>
                     <!--- this part will be hidden for mobile version -->
 					<div class="nav navbar-nav navbar-right hidden-xs">
-						@if(Session::get('isLogin') and false == Session::get('isAdmin'))
+						<?php if(Session::get('isLogin') and false == Session::get('isAdmin')): ?>
                         <div class="dropdown  cartMenu "> <a href="./cart" class="dropdown-toggle"> <i class="fa fa-shopping-cart"> </i> <span class="cartRespons"> 购物车 </span>  </a>
 						
                             <!--/.dropdown-menu-->
                         </div>
-                        @else
-                        @endif
+                        <?php else: ?>
+                        <?php endif; ?>
 
                         <!--/.search-box -->
                     </div>
@@ -254,12 +254,12 @@
         <!-- /.Fixed navbar -->
         <div style="margin-bottom: 60px;">
 			<!--yield new data -->
-			@yield('content')
+			<?php echo $__env->yieldContent('content'); ?>
         </div>
         <footer style='position:fixed;bottom:0px;margin:0px;width:100%;z-index:99'>
             <div class="footer-bottom">
                 <div class="container" style="margin:0;padding:0">
-                    <p class="pull-left">&nbsp; &nbsp; 2015 &copy; {{Config::get('mushroom.Company_Name')}}</p>
+                    <p class="pull-left">&nbsp; &nbsp; 2015 &copy; <?php echo e(Config::get('mushroom.Company_Name')); ?></p>
                 </div>
             </div>
         </footer>
